@@ -42,11 +42,28 @@ MHA iOS:
   app-header-backdrop-filter: "var(--mha-glass-header-filter)"
   card-mod-root: |
     :host {
+      --mha-ios-wallpaper: var(--lovelace-background);
       --ha-card-backdrop-filter: var(--mha-glass-filter);
       --ha-card-background: transparent;
       --ha-card-box-shadow: 0 12px 30px rgba(34,48,78,0.09), var(--mha-glass-inset);
       --ha-card-border-width: 1px;
       --ha-card-border-color: var(--mha-glass-border);
+    }
+
+    ha-app-layout,
+    div#view {
+      background: var(--mha-ios-wallpaper) !important;
+      background-size: cover !important;
+      background-position: center !important;
+      background-repeat: no-repeat !important;
+      background-attachment: fixed !important;
+    }
+
+    app-header,
+    app-toolbar,
+    div.header,
+    div.toolbar {
+      background: transparent !important;
     }
 
     .mdc-drawer .mdc-drawer__content {
@@ -58,6 +75,14 @@ MHA iOS:
     ha-label-badge {
       backdrop-filter: var(--mha-glass-filter) !important;
       -webkit-backdrop-filter: var(--mha-glass-filter) !important;
+    }
+  card-mod-view: |
+    :host {
+      --lovelace-background: var(--mha-ios-wallpaper) !important;
+    }
+
+    hui-view {
+      background: none !important;
     }
   card-mod-card: |
     ha-card {
