@@ -5,6 +5,8 @@
 # dashboard/card CSS and are intentionally not faked here.
 
 MHA iOS:
+  # Glass engine: requires card-mod (HACS). This is the MHA iOS material layer.
+  card-mod-theme: "MHA iOS"
   primary-color: "#5b8cff"
   accent-color: "#5b8cff"
   primary-background-color: "#d7e0f2"
@@ -26,6 +28,75 @@ MHA iOS:
   sidebar-selected-icon-color: "#5b8cff"
   sidebar-icon-color: "rgba(0,0,0,0.55)"
   sidebar-selected-text-color: "rgba(0,0,0,0.92)"
+  # MHA Glass tokens. card-mod consumes these through card-mod-root/card-mod-card.
+  mha-glass-filter: "blur(24px) saturate(1.45)"
+  mha-glass-dialog-filter: "blur(30px) saturate(1.5)"
+  mha-glass-header-filter: "blur(20px) saturate(1.35)"
+  mha-glass-sidebar-filter: "blur(32px) saturate(1.5)"
+  mha-glass-tint: "rgba(255,255,255,0.10)"
+  mha-glass-dialog-tint: "rgba(255,255,255,0.16)"
+  mha-glass-sidebar-tint: "rgba(242,242,247,0.30)"
+  mha-glass-border: "rgba(255,255,255,0.22)"
+  mha-glass-inset: "0 1px 0 rgba(255,255,255,0.18) inset"
+  ha-dialog-surface-backdrop-filter: "var(--mha-glass-dialog-filter)"
+  app-header-backdrop-filter: "var(--mha-glass-header-filter)"
+  card-mod-root: |
+    :host {
+      --ha-card-backdrop-filter: var(--mha-glass-filter);
+      --ha-card-background: transparent;
+      --ha-card-box-shadow: 0 12px 30px rgba(34,48,78,0.09), var(--mha-glass-inset);
+      --ha-card-border-width: 1px;
+      --ha-card-border-color: var(--mha-glass-border);
+    }
+
+    .mdc-drawer .mdc-drawer__content {
+      background: var(--mha-glass-sidebar-tint) !important;
+      backdrop-filter: var(--mha-glass-sidebar-filter) !important;
+      -webkit-backdrop-filter: var(--mha-glass-sidebar-filter) !important;
+    }
+
+    ha-label-badge {
+      backdrop-filter: var(--mha-glass-filter) !important;
+      -webkit-backdrop-filter: var(--mha-glass-filter) !important;
+    }
+  card-mod-card: |
+    ha-card {
+      position: relative;
+      overflow: hidden;
+      background: transparent !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+    }
+
+    ha-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--mha-glass-tint);
+      backdrop-filter: var(--mha-glass-filter);
+      -webkit-backdrop-filter: var(--mha-glass-filter);
+      border-radius: inherit;
+      box-shadow: var(--mha-glass-inset);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    :host(hui-heading-card) ha-card::before,
+    :host(mushroom-title-card) ha-card::before,
+    :host(.type-custom-bubble-card) ha-card::before,
+    :host(mushroom-chips-card) ha-card::before {
+      content: none !important;
+    }
+
+    :host(hui-heading-card) ha-card,
+    :host(mushroom-title-card) ha-card,
+    :host(.type-custom-bubble-card) ha-card,
+    :host(mushroom-chips-card) ha-card {
+      background: transparent !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      box-shadow: none !important;
+    }
   input-background-color: "rgba(255,255,255,0.18)"
   input-fill-color: "rgba(255,255,255,0.18)"
   input-ink-color: "rgba(0,0,0,0.92)"
@@ -57,6 +128,11 @@ MHA iOS:
     dark:
       primary-color: "#76a7ff"
       accent-color: "#76a7ff"
+      mha-glass-tint: "rgba(255,255,255,0.075)"
+      mha-glass-dialog-tint: "rgba(44,44,46,0.38)"
+      mha-glass-sidebar-tint: "rgba(20,22,30,0.42)"
+      mha-glass-border: "rgba(235,243,255,0.20)"
+      mha-glass-inset: "0 1px 0 rgba(255,255,255,0.14) inset"
       primary-background-color: "#0b1020"
       secondary-background-color: "#171d33"
       card-background-color: "rgba(255,255,255,0.12)"
