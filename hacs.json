@@ -1,0 +1,7 @@
+{
+  "name": "MHA iOS",
+  "content_in_root": false,
+  "filename": "mha-ios.yaml",
+  "render_readme": true,
+  "homeassistant": "2025.5.0"
+}
