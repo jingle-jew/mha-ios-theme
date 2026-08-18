@@ -150,6 +150,7 @@ MHA iOS:
   primary-font-family: "-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Segoe UI', sans-serif"
   paper-font-common-base_-_font-family: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', sans-serif"
   modes:
+    light: {}
     dark:
       primary-color: "#76a7ff"
       accent-color: "#76a7ff"
