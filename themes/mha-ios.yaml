@@ -1,31 +1,108 @@
 # MHA iOS — Home Assistant theme
-# Native Home Assistant theme inspired by the MHA Widget Hub iOS visual system.
-# Wallpaper assets are standalone SVG files hosted in this HACS repository.
+# Pure design layer: radius, borders, typography, spacing, animation,
+# shadows, layout, and Web Awesome geometry.
+# Colors (legacy, semantic, state, MDC, etc.) belong to Catppuccin.
 
 MHA iOS:
-  card-mod-theme: "MHA iOS"
-  primary-color: "#5b8cff"
-  accent-color: "#5b8cff"
-  primary-background-color: "#d7e0f2"
-  secondary-background-color: "#c5d2ea"
-  card-background-color: "rgba(255,255,255,0.32)"
-  primary-text-color: "rgba(0,0,0,0.92)"
-  secondary-text-color: "rgba(0,0,0,0.55)"
-  disabled-text-color: "rgba(0,0,0,0.32)"
-  ha-card-background: "rgba(255,255,255,0.32)"
-  ha-card-border-radius: "24px"
-  ha-card-border-width: "1px"
-  ha-card-border-color: "rgba(255,255,255,0.54)"
-  ha-card-box-shadow: "0 12px 30px rgba(34,48,78,0.09), inset 0 1px 0 rgba(255,255,255,0.54)"
-  app-header-background-color: "rgba(255,255,255,0.24)"
-  app-header-text-color: "rgba(0,0,0,0.92)"
-  sidebar-background-color: "rgba(242,242,247,0.72)"
-  sidebar-text-color: "rgba(0,0,0,0.78)"
-  sidebar-selected-background-color: "rgba(255,255,255,0.54)"
-  sidebar-selected-icon-color: "#5b8cff"
-  sidebar-icon-color: "rgba(0,0,0,0.55)"
-  sidebar-selected-text-color: "rgba(0,0,0,0.92)"
+  # =========================================================================
+  # HA Core Design Tokens
+  # =========================================================================
 
+  # -- Border radius --------------------------------------------------------
+  ha-border-radius-sm: 8px
+  ha-border-radius-md: 12px
+  ha-border-radius-lg: 16px
+  ha-border-radius-xl: 20px
+  ha-border-radius-2xl: 24px
+  ha-border-radius-3xl: 28px
+  ha-border-radius-4xl: 32px
+  ha-border-radius-5xl: 36px
+  ha-border-radius-6xl: 40px
+  ha-border-radius-pill: 9999px
+  ha-border-radius-circle: 50%
+  ha-border-radius-square: 0px
+
+  # -- Border width ---------------------------------------------------------
+  ha-border-width-sm: 0.5px
+  ha-border-width-md: 1px
+  ha-border-width-lg: 1.5px
+
+  # -- Typography -----------------------------------------------------------
+  ha-font-family-body: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', system-ui, sans-serif"
+  ha-font-family-heading: "-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', system-ui, sans-serif"
+  ha-font-family-code: "'SF Mono', 'Fira Code', 'Fira Mono', Menlo, Consolas, 'Liberation Mono', monospace"
+  ha-font-family-longform: "Georgia, 'Times New Roman', serif"
+
+  ha-font-weight-light: 300
+  ha-font-weight-normal: 400
+  ha-font-weight-medium: 500
+  ha-font-weight-bold: 700
+  ha-font-weight-body: 400
+  ha-font-weight-heading: 600
+  ha-font-weight-action: 500
+
+  ha-font-size-scale: 1
+  ha-font-size-xs: 11px
+  ha-font-size-s: 13px
+  ha-font-size-m: 15px
+  ha-font-size-l: 17px
+  ha-font-size-xl: 20px
+  ha-font-size-2xl: 24px
+  ha-font-size-3xl: 28px
+  ha-font-size-4xl: 34px
+  ha-font-size-5xl: 40px
+
+  ha-line-height-condensed: 1.2
+  ha-line-height-normal: 1.5
+  ha-line-height-expanded: 1.8
+
+  ha-font-smoothing: antialiased
+  ha-moz-osx-font-smoothing: grayscale
+
+  # -- Spacing --------------------------------------------------------------
+  ha-space-1: 4px
+  ha-space-2: 8px
+  ha-space-3: 12px
+  ha-space-4: 16px
+  ha-space-5: 20px
+  ha-space-6: 24px
+  ha-space-7: 28px
+  ha-space-8: 32px
+  ha-space-9: 36px
+  ha-space-10: 40px
+  ha-space-11: 44px
+  ha-space-12: 48px
+  ha-space-13: 52px
+  ha-space-14: 56px
+  ha-space-15: 60px
+  ha-space-16: 64px
+  ha-space-17: 68px
+  ha-space-18: 72px
+  ha-space-19: 76px
+  ha-space-20: 80px
+
+  # -- Animation ------------------------------------------------------------
+  ha-animation-duration-none: 0ms
+  ha-animation-duration-instant: 1ms
+  ha-animation-duration-fast: 75ms
+  ha-animation-duration-normal: 200ms
+  ha-animation-duration-slow: 350ms
+
+  # -- Elevation / shadows --------------------------------------------------
+  ha-box-shadow-s: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.08)
+  ha-box-shadow-m: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.06)
+  ha-box-shadow-l: 0 12px 32px rgba(0,0,0,0.12), 0 4px 8px rgba(0,0,0,0.08)
+
+  # =========================================================================
+  # Native Chrome — layout / header / dialog
+  # =========================================================================
+  header-height: 56px
+  app-header-border-bottom: "1px solid rgba(0,0,0,0.06)"
+  ha-dialog-scrim-backdrop-filter: "blur(30px) saturate(1.5)"
+
+  # =========================================================================
+  # MHA Glass — custom tokens consumed by card-mod CSS
+  # =========================================================================
   mha-glass-filter: "blur(24px) saturate(1.45)"
   mha-glass-dialog-filter: "blur(30px) saturate(1.5)"
   mha-glass-header-filter: "blur(20px) saturate(1.35)"
@@ -37,6 +114,55 @@ MHA iOS:
   mha-glass-inset: "0 1px 0 rgba(255,255,255,0.18) inset"
   ha-dialog-surface-backdrop-filter: "var(--mha-glass-dialog-filter)"
   app-header-backdrop-filter: "var(--mha-glass-header-filter)"
+
+  # =========================================================================
+  # Web Awesome — design tokens
+  # =========================================================================
+  wa-space-xs: 4px
+  wa-space-m: 16px
+  wa-space-l: 24px
+  wa-space-xl: 32px
+
+  wa-font-weight-action: 500
+  wa-font-weight-body: 400
+
+  wa-transition-normal: 200ms
+  wa-transition-fast: 75ms
+  wa-transition-easing: cubic-bezier(0.4, 0, 0.2, 1)
+
+  wa-border-style: solid
+  wa-border-width-s: 0.5px
+  wa-border-width-m: 1px
+  wa-border-width-l: 1.5px
+
+  wa-border-radius-s: 8px
+  wa-border-radius-m: 12px
+  wa-border-radius-l: 16px
+  wa-border-radius-pill: 9999px
+
+  wa-line-height-condensed: 1.2
+
+  wa-font-size-s: 13px
+  wa-font-size-m: 15px
+  wa-font-size-l: 17px
+
+  wa-shadow-s: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.08)
+  wa-shadow-m: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.06)
+  wa-shadow-l: 0 12px 32px rgba(0,0,0,0.12), 0 4px 8px rgba(0,0,0,0.08)
+
+  wa-panel-border-radius: var(--ha-border-radius-3xl)
+  wa-panel-border-style: solid
+  wa-panel-border-width: 1px
+
+  # =========================================================================
+  # Wallpaper
+  # =========================================================================
+  lovelace-background: "center / cover no-repeat fixed url('https://raw.githubusercontent.com/jingle-jew/mha-ios-theme/main/wallpaper-light.svg')"
+
+  # =========================================================================
+  # card-mod CSS — frosted glass system
+  # =========================================================================
+  card-mod-theme: "MHA iOS"
 
   card-mod-root: |
     :host {
@@ -118,87 +244,23 @@ MHA iOS:
       box-shadow: none !important;
     }
 
-  input-background-color: "rgba(255,255,255,0.18)"
-  input-fill-color: "rgba(255,255,255,0.18)"
-  input-ink-color: "rgba(0,0,0,0.92)"
-  input-label-ink-color: "rgba(0,0,0,0.55)"
-  divider-color: "rgba(0,0,0,0.08)"
-  scrollbar-thumb-color: "rgba(0,0,0,0.20)"
-  scrollbar-track-color: "transparent"
-  table-row-background-color: "transparent"
-  table-row-alternative-background-color: "rgba(255,255,255,0.12)"
-  paper-dialog-background-color: "rgba(242,242,247,0.88)"
-  paper-menu-background-color: "rgba(242,242,247,0.92)"
-  paper-listbox-background-color: "transparent"
-  mdc-dialog-container-color: "rgba(242,242,247,0.92)"
-  mdc-menu-surface-container-color: "rgba(242,242,247,0.68)"
-  mdc-text-field-fill-color: "rgba(255,255,255,0.30)"
-  ha-menu-surface-backdrop-filter: "blur(22px) saturate(1.45)"
-  ha-menu-surface-background-color: "rgba(242,242,247,0.68)"
-  state-active-color: "#5b8cff"
-  state-inactive-color: "rgba(0,0,0,0.38)"
-  state-cover-open-color: "#ff9f0a"
-  state-light-active-color: "#ffcc00"
-  state-switch-active-color: "#34c759"
-  state-media_player-active-color: "#5b8cff"
-  state-person-home-color: "#34c759"
-  state-person-not_home-color: "rgba(0,0,0,0.38)"
-
-  primary-font-family: "-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Segoe UI', sans-serif"
-  paper-font-common-base_-_font-family: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', sans-serif"
-
-  lovelace-background: "center / cover no-repeat fixed url('https://raw.githubusercontent.com/jingle-jew/mha-ios-theme/main/wallpaper-light.svg')"
-
+  # =========================================================================
+  # Light / Dark mode — structural overrides only
+  # =========================================================================
   modes:
     light:
       lovelace-background: "center / cover no-repeat fixed url('https://raw.githubusercontent.com/jingle-jew/mha-ios-theme/main/wallpaper-light.svg')"
     dark:
-      primary-color: "#76a7ff"
-      accent-color: "#76a7ff"
+      ha-box-shadow-s: 0 1px 3px rgba(0,0,0,0.24), 0 1px 2px rgba(0,0,0,0.32)
+      ha-box-shadow-m: 0 4px 12px rgba(0,0,0,0.32), 0 2px 4px rgba(0,0,0,0.24)
+      ha-box-shadow-l: 0 16px 40px rgba(0,0,0,0.40), 0 4px 8px rgba(0,0,0,0.28)
+      app-header-border-bottom: "1px solid rgba(255,255,255,0.08)"
       mha-glass-tint: "rgba(255,255,255,0.075)"
       mha-glass-dialog-tint: "rgba(44,44,46,0.38)"
       mha-glass-sidebar-tint: "rgba(20,22,30,0.42)"
       mha-glass-border: "rgba(235,243,255,0.20)"
       mha-glass-inset: "0 1px 0 rgba(255,255,255,0.14) inset"
-      primary-background-color: "#0b1020"
-      secondary-background-color: "#171d33"
-      card-background-color: "rgba(255,255,255,0.12)"
-      primary-text-color: "rgba(255,255,255,0.92)"
-      secondary-text-color: "rgba(255,255,255,0.55)"
-      disabled-text-color: "rgba(255,255,255,0.30)"
-      ha-card-background: "rgba(255,255,255,0.12)"
-      ha-card-border-color: "rgba(235,243,255,0.28)"
-      ha-card-box-shadow: "0 16px 40px rgba(0,0,0,0.20), inset 0 1px 0 rgba(255,255,255,0.28)"
-      app-header-background-color: "rgba(11,16,32,0.62)"
-      app-header-text-color: "rgba(255,255,255,0.92)"
-      sidebar-background-color: "rgba(20,22,30,0.82)"
-      sidebar-text-color: "rgba(255,255,255,0.78)"
-      sidebar-selected-background-color: "rgba(255,255,255,0.12)"
-      sidebar-selected-icon-color: "#76a7ff"
-      sidebar-icon-color: "rgba(255,255,255,0.55)"
-      sidebar-selected-text-color: "rgba(255,255,255,0.92)"
-      input-background-color: "rgba(255,255,255,0.085)"
-      input-fill-color: "rgba(255,255,255,0.085)"
-      input-ink-color: "rgba(255,255,255,0.92)"
-      input-label-ink-color: "rgba(255,255,255,0.55)"
-      divider-color: "rgba(255,255,255,0.10)"
-      scrollbar-thumb-color: "rgba(255,255,255,0.22)"
-      table-row-background-color: "transparent"
-      table-row-alternative-background-color: "rgba(255,255,255,0.05)"
-      paper-dialog-background-color: "rgba(44,44,46,0.92)"
-      paper-menu-background-color: "rgba(44,44,46,0.94)"
-      paper-listbox-background-color: "transparent"
-      mdc-dialog-container-color: "rgba(44,44,46,0.92)"
-      mdc-menu-surface-container-color: "rgba(44,44,46,0.68)"
-      mdc-text-field-fill-color: "rgba(255,255,255,0.10)"
-      ha-menu-surface-backdrop-filter: "blur(22px) saturate(1.45)"
-      ha-menu-surface-background-color: "rgba(44,44,46,0.68)"
-      state-active-color: "#76a7ff"
-      state-inactive-color: "rgba(255,255,255,0.38)"
-      state-cover-open-color: "#ffb340"
-      state-light-active-color: "#ffd60a"
-      state-switch-active-color: "#30d158"
-      state-media_player-active-color: "#76a7ff"
-      state-person-home-color: "#30d158"
-      state-person-not_home-color: "rgba(255,255,255,0.38)"
+      wa-shadow-s: 0 1px 3px rgba(0,0,0,0.24), 0 1px 2px rgba(0,0,0,0.32)
+      wa-shadow-m: 0 4px 12px rgba(0,0,0,0.32), 0 2px 4px rgba(0,0,0,0.24)
+      wa-shadow-l: 0 16px 40px rgba(0,0,0,0.40), 0 4px 8px rgba(0,0,0,0.28)
       lovelace-background: "center / cover no-repeat fixed url('https://raw.githubusercontent.com/jingle-jew/mha-ios-theme/main/wallpaper-dark.svg')"
